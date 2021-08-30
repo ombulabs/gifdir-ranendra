@@ -1,0 +1,21 @@
+<h2>My GIF Images</h2>
+<p><%= link_to "Add GIF Image", new_image_path %></p>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>GIF Image</th>
+    <th>Actions</th>
+  </thead>
+
+  <% @images.each do |image| %>
+    <tr>
+      <td><%= image.id %></td>
+      <td><%= image.name %></td>
+      <td>
+        <%= image_tag image.gif_file if image.gif_file.attached? %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,10 @@
+<%= form_for @image do |f| %>
+
+  <% @image.errors.full_messages.each do |error_message| %>
+  <p><%= error_message %></p>
+  <% end %>
+
+  <%= f.text_field :name %>
+  <%= f.file_field :gif_file %>
+  <%= f.submit "Submit" %>
+<% end %>
