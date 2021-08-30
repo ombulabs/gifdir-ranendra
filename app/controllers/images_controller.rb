@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @images = current_user.images
+    @images = current_user.images.page(params[:page])
   end
 
   def new
