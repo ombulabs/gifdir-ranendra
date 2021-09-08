@@ -4,7 +4,13 @@
   <p><%= error_message %></p>
   <% end %>
 
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <br>
+  <%= f.text_field :tag_list, placeholder: "New Tags" %>
+  <br>
+  <span> Existing tags </span>
+  <%= select_tag(:existing_tags, options_for_select(@top_ten_tags), multiple: true) %>
+  <br>
   <%= f.file_field :gif_file %>
   <%= f.submit "Submit" %>
 <% end %>
