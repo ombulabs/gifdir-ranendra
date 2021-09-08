@@ -27,6 +27,10 @@ class ImagesController < ApplicationController
   end
 
   def merge_tag_list
-    (params[:image][:tag_list].split(',') + params[:existing_tags]).join(" ")
+    if params[:existing_tags].nil?
+      params[:image][:tag_list]
+    else 
+      (params[:image][:tag_list].split(',') + params[:existing_tags]).join(" ")
+    end
   end
 end
